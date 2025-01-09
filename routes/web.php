@@ -24,7 +24,13 @@ Route::get('/', [frontendController::class,'index']);
 Route::controller(backendController::class)->group(function () {
     Route::get('/user/cv','userCv')->name('usercv');
     Route::get('/user/logout','userLogout')->name('user.logout');
+
     Route::post('/save/info','saveInfo')->name('save.info');
+    Route::get('/edit/info','editInfo')->name('edit.info');
+    Route::post('/update/info','updateInfo')->name('update.info');
+
+    Route::get('/user/profile','userProfile')->name('user.profile');
+    Route::post('/save/profile','saveProfile')->name('save.profile');
 
 });
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Info;
+use App\Models\Profile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -42,7 +43,29 @@ class backendController extends Controller
 
         );
 
+        return redirect()->route('user.profile')->with( $notification);
+    }
+
+    public function userProfile(Request $request)
+    {
+        return view(view: "backend.profile");
+
+    }
+
+    public function saveProfile(Request $request)
+    {
+        Profile::insert([
+            'user_id'=> Auth::user()->id,
+            'des'=>$request->des,
+
+        ]);
+        $notification =array(
+            'message'=>'profile inserted successfully',
+            'alert-type'=>'success',
+
+        );
         return redirect()->back()->with( $notification);
+
     }
 
 }
