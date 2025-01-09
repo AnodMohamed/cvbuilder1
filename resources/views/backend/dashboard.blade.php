@@ -27,6 +27,8 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="{{ asset('backend/css/app-light.css') }}" id="lightTheme">
   <link rel="stylesheet" href="{{ asset('backend/css/app-dark.css') }}" id="darkTheme" disabled>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
 </head>
 
 <body class="vertical  light  ">
@@ -81,7 +83,10 @@
   <script src="{{ asset('backend/js/dropzone.min.js') }}"></script>
   <script src="{{ asset('backend/js/uppy.min.js') }}"></script>
   <script src="{{ asset('backend/js/quill.min.js') }}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   <script>
+
     $('.select2').select2(
       {
         theme: 'bootstrap4',
@@ -273,6 +278,27 @@
         console.log('Upload complete! We’ve uploaded these files:', result.successful)
       });
     }
+
+    @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+            case 'info':
+            toastr.info(" {{ Session::get('message') }} ");
+            break;
+
+            case 'success':
+            toastr.success(" {{ Session::get('message') }} ");
+            break;
+
+            case 'warning':
+            toastr.warning(" {{ Session::get('message') }} ");
+            break;
+
+            case 'error':
+            toastr.error(" {{ Session::get('message') }} ");
+            break;
+        }
+    @endif
   </script>
   <script src="{{ asset('backend/js/apps.js') }}"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->

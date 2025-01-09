@@ -36,8 +36,13 @@ class backendController extends Controller
             'address'=>$request->address,
             'city'=> $request->city,
         ]);
+        $notification =array(
+            'message'=>'basic info inserted successfully',
+            'alert-type'=>'success',
 
-        return redirect()->back();
+        );
+
+        return redirect()->back()->with( $notification);
     }
 
 }
