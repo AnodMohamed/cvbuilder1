@@ -152,7 +152,7 @@
       {
         reverse: true
       });
-    $('.input-phoneus').mask('(000) 000-0000');
+    $('.input-phoneus').mask('+(000) 000-000-000');
     $('.input-mixed').mask('AAA 000-S0S');
     $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
       {

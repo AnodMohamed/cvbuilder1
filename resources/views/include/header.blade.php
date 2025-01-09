@@ -29,9 +29,19 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">About</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contact</a>
-                                    </li>
+                                    @auth
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('usercv') }}">CV Panel</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('user.logout') }}">Logout</a>
+                                        </li>
+                                    @else
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">Log in</a>
+                                        </li>
+                                    @endauth
+
                                 </ul>
                             </div>
                         </nav>
@@ -53,7 +63,13 @@
                                 page when looking at its layout. The point of using Lorem Ipsum is that it has a
                                 more-or-less
                                 normal distribution of letters,</p>
-                            <a href="#">Start Now</a>
+                            @auth
+                                <a href="{{ route('usercv') }}">Start Now</a>
+
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
+
+                            @endauth
                         </div>
                     </div>
                     <div class="col-md-6">
