@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Info;
+use App\Models\Level;
 use App\Models\Profile;
 use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
@@ -131,7 +132,7 @@ class backendController extends Controller
             'alert-type'=>'success',
 
         );
-        return redirect()->back()->with( $notification);
+        return redirect()->route('user.edu')->with( $notification);
 
     }
 
@@ -157,5 +158,14 @@ class backendController extends Controller
 
         return redirect()->back()->with( $notification);
     }
+
+    public function userEdu(Request $request)
+    {
+        $kind = Level::get();
+        return view('backend.edu', compact('kind'));
+
+
+    }
+
 
 }
