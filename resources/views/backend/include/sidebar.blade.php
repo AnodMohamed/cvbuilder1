@@ -42,43 +42,20 @@
         </li>
     </ul>
     <p class="text-muted nav-heading mt-4 mb-1">
-        <span>Components</span>
+        <span>cv</span>
     </p>
     <ul class="navbar-nav flex-fill w-100 mb-2">
         <li class="nav-item dropdown">
             <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>
-                <span class="ml-3 item-text">UI elements</span>
+                <span class="ml-3 item-text">Edit Cv</span>
             </a>
             <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
                 <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
+                    <a class="nav-link pl-3" href="{{ route('edit.info') }}"><span class="ml-1 item-text">Basic Info</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-typograpy.html"><span
-                            class="ml-1 item-text">Typograpy</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Icons</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-buttons.html"><span class="ml-1 item-text">Buttons</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-notification.html"><span
-                            class="ml-1 item-text">Notifications</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Modals</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Tabs &
-                            Accordion</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="./ui-progress.html"><span class="ml-1 item-text">Progress</span></a>
-                </li>
+
             </ul>
         </li>
         <li class="nav-item w-100">

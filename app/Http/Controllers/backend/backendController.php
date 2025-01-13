@@ -68,4 +68,27 @@ class backendController extends Controller
 
     }
 
+    public function editInfo(Request $request){
+        $info = Info::where('user_id', Auth::user()->id)->first();
+        return view('backend.editInfo', compact('info'));
+    }
+
+    public function updateInfo(Request $request)
+    {
+        $id = $request->id;
+        Info::findOrFail($id)->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'address'=>$request->address,
+            'city'=> $request->city,
+        ]);
+        $notification =array(
+            'message'=>'basic info update successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->route('user.profile')->with( $notification);
+    }
 }
