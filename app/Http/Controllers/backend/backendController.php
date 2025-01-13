@@ -134,4 +134,28 @@ class backendController extends Controller
         return redirect()->back()->with( $notification);
 
     }
+
+    public function editSkill(Request $request){
+        $skill = Skill::where('user_id', Auth::user()->id)->first();
+        $skillName = $skill->skillName;
+        $skills = explode(',',$skillName);
+
+        return view('backend.editSkill', compact('skillName', 'skill'));
+    }
+
+    public function updateSkill(Request $request)
+    {
+        $id = $request->id;
+        Skill::findOrFail($id)->update([
+            'skillName'=>$request->skillName,
+        ]);
+        $notification =array(
+            'message'=>'skills update successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
+
 }

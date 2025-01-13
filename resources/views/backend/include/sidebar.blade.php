@@ -59,6 +59,10 @@
                     <a class="nav-link pl-3" href="{{ route('edit.profile') }}"><span class="ml-1 item-text">Profile</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="{{ route('edit.skill') }}"><span class="ml-1 item-text">Skills</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item w-100">
