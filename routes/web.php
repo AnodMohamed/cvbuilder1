@@ -31,6 +31,8 @@ Route::controller(backendController::class)->group(function () {
 
     Route::get('/user/profile','userProfile')->name('user.profile');
     Route::post('/save/profile','saveProfile')->name('save.profile');
+    Route::get('/edit/profile','editProfile')->name('edit.profile');
+    Route::post('/update/profile','updateProfile')->name('update.profile');
 
 });
 

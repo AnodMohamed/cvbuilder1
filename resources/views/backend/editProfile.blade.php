@@ -11,15 +11,17 @@
                     <div class="col-md-6">
                         <div class="card shadow mb-4">
                             <div class="card-header">
-                                <strong class="card-title">Profile</strong>
+                                <strong class="card-title">Edit Profile</strong>
                                 <p> short description about your self</p>
                             </div>
                             <div class="card-body">
-                                <form class="needs-validation" method="POSt" action="{{ route('save.profile') }}" novalidate>
+                                <form class="needs-validation" method="POSt" action="{{ route('update.profile') }}" novalidate>
                                     @csrf
+                                    <input type="hidden" name="id" value="{{ $profile->id }}">
+
                                     <div class="form-group mb-3">
                                         <label for="example-textarea">Text area</label>
-                                        <textarea class="form-control" name="des" id="example-textarea" rows="4" ></textarea>
+                                        <textarea class="form-control" name="des" id="example-textarea"  value="{{ $profile->des }}">{{ $profile->des }}</textarea>
                                     </div>
 
                                     <button class="btn btn-primary" type="submit">Save</button>

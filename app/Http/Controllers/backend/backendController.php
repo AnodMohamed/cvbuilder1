@@ -91,4 +91,24 @@ class backendController extends Controller
 
         return redirect()->route('user.profile')->with( $notification);
     }
+
+    public function editProfile(Request $request){
+        $profile = Profile::where('user_id', Auth::user()->id)->first();
+        return view('backend.editProfile', compact('profile'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $id = $request->id;
+        Profile::findOrFail($id)->update([
+            'des'=>$request->des,
+        ]);
+        $notification =array(
+            'message'=>'basic profile update successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
 }
