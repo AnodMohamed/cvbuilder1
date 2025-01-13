@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Info;
 use App\Models\Profile;
+use App\Models\Skill;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -64,7 +65,7 @@ class backendController extends Controller
             'alert-type'=>'success',
 
         );
-        return redirect()->back()->with( $notification);
+        return redirect()->route('user.skill')->with( $notification);
 
     }
 
@@ -110,5 +111,27 @@ class backendController extends Controller
         );
 
         return redirect()->back()->with( $notification);
+    }
+
+    public function userSkill(Request $request)
+    {
+        return view(view: "backend.skill");
+
+    }
+
+    public function saveSkill(Request $request)
+    {
+        Skill::insert([
+            'user_id'=> Auth::user()->id,
+            'skillName'=>$request->skillName,
+
+        ]);
+        $notification =array(
+            'message'=>'skills inserted successfully',
+            'alert-type'=>'success',
+
+        );
+        return redirect()->back()->with( $notification);
+
     }
 }

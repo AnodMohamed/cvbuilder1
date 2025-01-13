@@ -34,6 +34,11 @@ Route::controller(backendController::class)->group(function () {
     Route::get('/edit/profile','editProfile')->name('edit.profile');
     Route::post('/update/profile','updateProfile')->name('update.profile');
 
+    Route::get('/user/skill','userSkill')->name('user.skill');
+    Route::post('/save/skill','saveSkill')->name('save.skill');
+    Route::get('/edit/skill','editSkill')->name('edit.skill');
+    Route::post('/update/skill','updateSkill')->name('update.skill');
+
 });
 
 require __DIR__.'/auth.php';

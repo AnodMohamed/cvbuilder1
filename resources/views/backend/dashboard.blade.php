@@ -2,92 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="{{ asset('backend/favicon.ico') }}">
-  <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
-  <!-- Simple bar CSS -->
-  <link rel="stylesheet" href="{{ asset('backend/css/simplebar.css') }}">
-  <!-- Fonts CSS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <!-- Icons CSS -->
-  <link rel="stylesheet" href="{{ asset('backend/css/feather.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/css/select2.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/css/dropzone.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/css/uppy.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/css/jquery.steps.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/css/jquery.timepicker.css') }}">
-  <link rel="stylesheet" href="{{ asset('backend/css/quill.snow.css') }}">
-  <!-- Date Range Picker CSS -->
-  <link rel="stylesheet" href="{{ asset('backend/css/daterangepicker.css') }}">
-  <!-- App CSS -->
-  <link rel="stylesheet" href="{{ asset('backend/css/app-light.css') }}" id="lightTheme">
-  <link rel="stylesheet" href="{{ asset('backend/css/app-dark.css') }}" id="darkTheme" disabled>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ asset('backend/favicon.ico') }}">
+    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/simplebar.css') }}">
+    <!-- Fonts CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/select2.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/dropzone.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/uppy.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/jquery.steps.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/jquery.timepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/quill.snow.css') }}">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/daterangepicker.css') }}">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/app-light.css') }}" id="lightTheme">
+    <link rel="stylesheet" href="{{ asset('backend/css/app-dark.css') }}" id="darkTheme" disabled>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css">
+
 
 </head>
 
 <body class="vertical  light  ">
-  <div class="wrapper">
+    <div class="wrapper">
 
         {{-- header --}}
         @include('backend.include.header')
 
-    <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
-      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
-        <i class="fe fe-x"><span class="sr-only"></span></i>
-      </a>
+        <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+            <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+                <i class="fe fe-x"><span class="sr-only"></span></i>
+            </a>
 
-        {{-- sidebar --}}
-        @include('backend.include.sidebar')
+            {{-- sidebar --}}
+            @include('backend.include.sidebar')
 
-    </aside>
+        </aside>
 
-    {{-- basicinfo --}}
-    @yield('main')
+        {{-- basicinfo --}}
+        @yield('main')
 
-  </div> <!-- .wrapper -->
-  <script src="{{ asset('backend/js/jquery.min.js') }}"></script>
-  <script src="{{ asset('backend/js/popper.min.js') }}"></script>
-  <script src="{{ asset('backend/js/moment.min.js') }}"></script>
-  <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('backend/js/simplebar.min.js') }}"></script>
-  <script src="{{ asset('backend/js/daterangepicker.js') }}"></script>
-  <script src="{{ asset('backend/js/jquery.stickOnScroll.js') }}"></script>
-  <script src="{{ asset('backend/js/tinycolor-min.js') }}"></script>
-  <script src="{{ asset('backend/js/config.js') }}"></script>
-  <script src="{{ asset('backend/js/d3.min.js') }}"></script>
-  <script src="{{ asset('backend/js/topojson.min.js') }}"></script>
-  <script src="{{ asset('backend/js/datamaps.all.min.js') }}"></script>
-  <script src="{{ asset('backend/js/datamaps-zoomto.js') }}"></script>
-  <script src="{{ asset('backend/js/datamaps.custom.js') }}"></script>
-  <script src="{{ asset('backend/js/Chart.min.js') }}"></script>
-  <script>
-    /* defind global options */
+    </div> <!-- .wrapper -->
+    <script src="{{ asset('backend/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/js/popper.min.js') }}"></script>
+    <script src="{{ asset('backend/js/moment.min.js') }}"></script>
+    <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('backend/js/simplebar.min.js') }}"></script>
+    <script src="{{ asset('backend/js/daterangepicker.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.stickOnScroll.js') }}"></script>
+    <script src="{{ asset('backend/js/tinycolor-min.js') }}"></script>
+    <script src="{{ asset('backend/js/config.js') }}"></script>
+    <script src="{{ asset('backend/js/d3.min.js') }}"></script>
+    <script src="{{ asset('backend/js/topojson.min.js') }}"></script>
+    <script src="{{ asset('backend/js/datamaps.all.min.js') }}"></script>
+    <script src="{{ asset('backend/js/datamaps-zoomto.js') }}"></script>
+    <script src="{{ asset('backend/js/datamaps.custom.js') }}"></script>
+    <script src="{{ asset('backend/js/Chart.min.js') }}"></script>
+    <script>
+        /* defind global options */
     Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
     Chart.defaults.global.defaultFontColor = colors.mutedColor;
-  </script>
-  <script src="{{ asset('backend/js/gauge.min.js') }}"></script>
-  <script src="{{ asset('backend/js/jquery.sparkline.min.js') }}"></script>
-  <script src="{{ asset('backend/js/apexcharts.min.js') }}"></script>
-  <script src="{{ asset('backend/js/apexcharts.custom.js') }}"></script>
-  <script src="{{ asset('backend/js/jquery.mask.min.js') }}"></script>
-  <script src="{{ asset('backend/js/select2.min.js') }}"></script>
-  <script src="{{ asset('backend/js/jquery.steps.min.js') }}"></script>
-  <script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
-  <script src="{{ asset('backend/js/jquery.timepicker.js') }}"></script>
-  <script src="{{ asset('backend/js/dropzone.min.js') }}"></script>
-  <script src="{{ asset('backend/js/uppy.min.js') }}"></script>
-  <script src="{{ asset('backend/js/quill.min.js') }}"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </script>
+    <script src="{{ asset('backend/js/gauge.min.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('backend/js/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('backend/js/apexcharts.custom.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('backend/js/select2.min.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.steps.min.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.timepicker.js') }}"></script>
+    <script src="{{ asset('backend/js/dropzone.min.js') }}"></script>
+    <script src="{{ asset('backend/js/uppy.min.js') }}"></script>
+    <script src="{{ asset('backend/js/quill.min.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-  <script>
-
-    $('.select2').select2(
+    <script>
+        $('.select2').select2(
       {
         theme: 'bootstrap4',
       });
@@ -257,9 +258,9 @@
         });
       }, false);
     })();
-  </script>
-  <script>
-    var uptarg = document.getElementById('drag-drop-area');
+    </script>
+    <script>
+        var uptarg = document.getElementById('drag-drop-area');
     if (uptarg) {
       var uppy = Uppy.Core().use(Uppy.Dashboard,
         {
@@ -299,19 +300,32 @@
             break;
         }
     @endif
-  </script>
-  <script src="{{ asset('backend/js/apps.js') }}"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    </script>
+    <script src="{{ asset('backend/js/apps.js') }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
-  </script>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <script src=" https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+    <style>
+        .label-info {
+            background-color: blue;
+            padding: 1px;
+            border-radius: 4px;
+
+        }
+    </style>
+
 </body>
 
 </html>
