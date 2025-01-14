@@ -188,4 +188,30 @@ class backendController extends Controller
         return redirect()->route('user.edu')->with( $notification);
 
     }
+
+    public function editEdu(Request $request){
+        $edus = Education::where('user_id', Auth::user()->id)->get();
+        return view('backend.editEdu', compact('edus'));
+
+    }
+
+    public function updateEdu(Request $request)
+    {
+        $id = $request->id;
+        Education::findOrFail($id)->update([
+            'level_id'=>$request->level_id,
+            'eduName'=>$request->eduName,
+            'startDate'=>$request->startDate,
+            'EndDate'=>$request->EndDate,
+            'desc'=>$request->desc,
+            'field'=>$request->field,
+        ]);
+        $notification =array(
+            'message'=>'Education update successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
 }

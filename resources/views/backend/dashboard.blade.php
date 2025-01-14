@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('backend/css/jquery.steps.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/jquery.timepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/quill.snow.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/dataTables.bootstrap4.css') }}">
+
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="{{ asset('backend/css/daterangepicker.css') }}">
     <!-- App CSS -->
@@ -85,6 +87,8 @@
     <script src="{{ asset('backend/js/dropzone.min.js') }}"></script>
     <script src="{{ asset('backend/js/uppy.min.js') }}"></script>
     <script src="{{ asset('backend/js/quill.min.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('backend/js/dataTables.bootstrap4.min.js') }}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
