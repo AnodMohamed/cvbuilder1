@@ -67,6 +67,10 @@
                     <a class="nav-link pl-3" href="{{ route('edit.edu') }}"><span class="ml-1 item-text">Education</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="{{ route('edit.language') }}"><span class="ml-1 item-text">Language</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item w-100">

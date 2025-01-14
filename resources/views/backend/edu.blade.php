@@ -68,7 +68,12 @@
 
 
 
-                                    <button class="btn btn-primary" type="submit">Save</button>
+
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn mb-2 btn-primary mr-2" type="submit">Save</button>
+                                        <a  class="btn mb-2 btn-danger mr-2" href="{{ route('user.image') }}">Next</a>
+                                    </div>
+
                                 </form>
                             </div> <!-- /.card-body -->
                         </div> <!-- /.card -->

@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Education;
 use App\Models\Info;
+use App\Models\Language;
 use App\Models\Level;
 use App\Models\Profile;
 use App\Models\Skill;
@@ -233,5 +234,58 @@ class backendController extends Controller
         );
 
         return redirect()->back()->with( $notification);
+    }
+
+    public function userLanguage()
+    {
+        return view('backend.language');
+
+    }
+    public function saveLanguage(Request $request)
+    {
+        Language::insert([
+            'user_id'=> Auth::user()->id,
+            'languageName'=>$request->languageName,
+
+        ]);
+        $notification =array(
+            'message'=>'language inserted successfully',
+            'alert-type'=>'success',
+
+        );
+        return redirect()->route('user.image')->with( $notification);
+
+    }
+
+
+    public function editLanguage(Request $request){
+        $language = Language::where('user_id', Auth::user()->id)->first();
+        $languageName = $language->languageName;
+        $languages = explode(',',$languageName);
+
+        return view('backend.eduLanguage', compact('languageName', 'language'));
+    }
+
+    public function updateLanguage(Request $request)
+    {
+        $id = $request->id;
+        Language::findOrFail($id)->update([
+            'languageName'=>$request->languageName,
+
+        ]);
+        $notification =array(
+            'message'=>'Language update successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->route('edit.language')->with( $notification);
+    }
+
+
+    public function userImage()
+    {
+        return view('backend.language');
+
     }
 }
