@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
+use App\Models\Education;
 use App\Models\Info;
 use App\Models\Level;
 use App\Models\Profile;
@@ -167,5 +168,24 @@ class backendController extends Controller
 
     }
 
+    public function saveEdu(Request $request)
+    {
+        Education::insert([
+            'user_id'=> Auth::user()->id,
+            'level_id'=>$request->level_id,
+            'eduName'=>$request->eduName,
+            'startDate'=>$request->startDate,
+            'EndDate'=>$request->EndDate,
+            'desc'=>$request->desc,
+            'field'=>$request->field,
 
+        ]);
+        $notification =array(
+            'message'=>'Education inserted successfully',
+            'alert-type'=>'success',
+
+        );
+        return redirect()->route('user.edu')->with( $notification);
+
+    }
 }
