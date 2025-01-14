@@ -6,10 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2 class="mb-2 page-title">Edit education details </h2>
-                <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible
-                    tool, built upon the foundations of progressive enhancement, that adds all of these advanced
-                    features to
-                    any HTML table. </p>
+                
                 <div class="row my-4">
                     <!-- Small table -->
                     <div class="col-md-12">
@@ -98,8 +95,7 @@
                                                                   </button>
                                                                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
                                                                     <a class="dropdown-item" href="{{ route('edit.edu.row',  $edu->id) }}">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Remove</a>
-                                                                    <a class="dropdown-item" href="#">Assign</a>
+                                                                    <a class="dropdown-item" id="delete" href="{{ route('delete.edu.row',  $edu->id) }}">Remove</a>
                                                                   </div>
                                                                 </div>
                                                             </td>

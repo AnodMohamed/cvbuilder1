@@ -43,9 +43,9 @@ Route::controller(backendController::class)->group(function () {
     Route::post('/save/edu','saveEdu')->name('save.edu');
     Route::get('/edit/edu','editEdu')->name('edit.edu');
     Route::get('/edit/edu/row/{id}','editEduRow')->name('edit.edu.row');
+    Route::post('/update/edu','updateEdu')->name(name: 'update.edu');
+    Route::get('/delete/edu/row/{id}','deleteEduRow')->name('delete.edu.row');
 
-
-    Route::post('/update/edu','updateEdu')->name('update.edu');
 });
 
 require __DIR__.'/auth.php';

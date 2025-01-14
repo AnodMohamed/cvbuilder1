@@ -222,4 +222,16 @@ class backendController extends Controller
 
         return redirect()->route('edit.edu')->with( $notification);
     }
+
+    public function deleteEduRow($id){
+
+        Education::findOrFail($id)->delete();
+        $notification =array(
+            'message'=>'Education deleted successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
 }
