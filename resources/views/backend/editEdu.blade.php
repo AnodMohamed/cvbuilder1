@@ -88,7 +88,7 @@
                                                             <td>{{ $edu->eduName }}</td>
                                                             <td>{{ $edu->startDate }}</td>
                                                             <td>{{ $edu->EndDate }}</td>
-                                                            <td>{{ $edu->level_id }}</td>
+                                                            <td>{{ $edu->education->levelName }}</td>
                                                             <td>{{ $edu->field }}</td>
                                                             <td>{{ $edu->desc }}</td>
                                                             <td>
