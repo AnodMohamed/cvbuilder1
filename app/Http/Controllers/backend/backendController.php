@@ -195,6 +195,14 @@ class backendController extends Controller
 
     }
 
+    public function editEduRow($id){
+        $edu = Education::where('id', $id)->first();
+        $kind = Level::get();
+
+        return view('backend.editEduRow', compact('edu','kind'));
+
+    }
+
     public function updateEdu(Request $request)
     {
         $id = $request->id;
@@ -207,11 +215,11 @@ class backendController extends Controller
             'field'=>$request->field,
         ]);
         $notification =array(
-            'message'=>'Education update successfully',
+            'message'=>'Education row update successfully',
             'alert-type'=>'success',
 
         );
 
-        return redirect()->back()->with( $notification);
+        return redirect()->route('edit.edu')->with( $notification);
     }
 }

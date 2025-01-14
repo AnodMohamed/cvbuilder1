@@ -40,10 +40,7 @@
                                                 role="grid" aria-describedby="dataTable-1_info">
                                                 <thead>
                                                     <tr role="row">
-                                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable-1"
-                                                            rowspan="1" colspan="1" style="width: 6.68333px;"
-                                                            aria-sort="ascending"
-                                                            aria-label=": activate to sort column descending"></th>
+
                                                         <th class="sorting" tabindex="0" aria-controls="dataTable-1"
                                                             rowspan="1" colspan="1" style="width: 8.48333px;"
                                                             aria-label="#: activate to sort column ascending">#</th>
@@ -78,23 +75,6 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                     <tr role="row" class="odd">
                                                         <td class="sorting_1">
                                                             <div class="custom-control custom-checkbox">
@@ -109,9 +89,21 @@
                                                             <td>{{ $edu->startDate }}</td>
                                                             <td>{{ $edu->EndDate }}</td>
                                                             <td>{{ $edu->level_id }}</td>
-                                                            <td>{{ $edu->desc }}</td>
                                                             <td>{{ $edu->field }}</td>
-                                                                </tr>
+                                                            <td>{{ $edu->desc }}</td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                  <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <span class="text-muted sr-only">Action</span>
+                                                                  </button>
+                                                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
+                                                                    <a class="dropdown-item" href="{{ route('edit.edu.row',  $edu->id) }}">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Remove</a>
+                                                                    <a class="dropdown-item" href="#">Assign</a>
+                                                                  </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
                                                         @endforeach
 
 

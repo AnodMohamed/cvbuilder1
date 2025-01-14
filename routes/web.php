@@ -42,6 +42,9 @@ Route::controller(backendController::class)->group(function () {
     Route::get('/user/edu','userEdu')->name('user.edu');
     Route::post('/save/edu','saveEdu')->name('save.edu');
     Route::get('/edit/edu','editEdu')->name('edit.edu');
+    Route::get('/edit/edu/row/{id}','editEduRow')->name('edit.edu.row');
+
+
     Route::post('/update/edu','updateEdu')->name('update.edu');
 });
 
