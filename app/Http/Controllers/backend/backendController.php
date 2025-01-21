@@ -5,11 +5,14 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Education;
+use App\Models\Image;
 use App\Models\Info;
 use App\Models\Language;
 use App\Models\Level;
 use App\Models\Profile;
 use App\Models\Skill;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -285,7 +288,33 @@ class backendController extends Controller
 
     public function userImage()
     {
-        return view('backend.language');
+        return view('backend.image');
 
+    }
+
+    public function saveImage(Request $request)
+    {
+        if($request->hasFile('img')){
+            $manager = new ImageManager(new Driver());
+
+            $img_name = hexdec(uniqid().''.$request->file('img')->getClientOriginalExtension());
+            $img = $manager->read($request->file('img'));
+            $img->resize(480,480);
+            $img->toJpeg(80)->save(base_path('public/upload/'.$img_name));
+            $url ='upload/'. $img_name;
+
+
+            Image::insert([
+                'user_id'=> Auth::user()->id,
+                'img'=>$request->img,
+
+            ]);
+            $notification =array(
+                'message'=>'language inserted successfully',
+                'alert-type'=>'success',
+
+            );
+            return redirect()->back()->with( $notification);
+        }
     }
 }

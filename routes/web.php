@@ -52,6 +52,7 @@ Route::controller(backendController::class)->group(function () {
     Route::post('/update/language','updateLanguage')->name(name: 'update.language');
 
     Route::get('/user/image','userImage')->name('user.image');
+    Route::post('/save/image','saveImage')->name('save.image');
 
 });
 
