@@ -297,20 +297,73 @@ class backendController extends Controller
         if($request->hasFile('img')){
             $manager = new ImageManager(new Driver());
 
-            $img_name = hexdec(uniqid().''.$request->file('img')->getClientOriginalExtension());
-            $img = $manager->read($request->file('img'));
-            $img->resize(480,480);
-            $img->toJpeg(80)->save(base_path('public/upload/'.$img_name));
-            $url ='upload/'. $img_name;
+                // Generate a unique name for the image
+            $img_name = hexdec(uniqid()) . '.' . $request->file('img')->getClientOriginalExtension();
 
+            // Read the image using Intervention Image
+            $img = $manager->read($request->file('img'));
+
+            // Resize the image to 480x480
+            $img->resize(480, 480);
+
+            // Save the image as JPEG with 80% quality
+            $img->save(public_path('upload/' . $img_name), 80);
+
+            // Create a URL path for the image
+            $url = 'upload/' . $img_name;
 
             Image::insert([
                 'user_id'=> Auth::user()->id,
-                'img'=>$request->img,
+                'img'=>$url,
 
             ]);
             $notification =array(
-                'message'=>'language inserted successfully',
+                'message'=>'Image uploaded successfully',
+                'alert-type'=>'success',
+
+            );
+            return redirect()->back()->with( $notification);
+        }
+    }
+
+    public function editImage(Request $request){
+
+        $image = Image::where('user_id', Auth::user()->id)->first();
+        return view('backend.editImage', compact( 'image'));
+    }
+
+    public function updateImage(Request $request)
+    {
+        $id = $request->id;
+        $Old_img = $request->Old_img;
+
+        if($request->hasFile('img')){
+            $manager = new ImageManager(new Driver());
+
+                // Generate a unique name for the image
+            $img_name = hexdec(uniqid()) . '.' . $request->file('img')->getClientOriginalExtension();
+
+            // Read the image using Intervention Image
+            $img = $manager->read($request->file('img'));
+
+            // Resize the image to 480x480
+            $img->resize(480, 480);
+
+            // Save the image as JPEG with 80% quality
+            $img->save(public_path('upload/' . $img_name), 80);
+
+            // Create a URL path for the image
+            $url = 'upload/' . $img_name;
+
+            if(file_exists($Old_img)){
+                unlink($Old_img);
+            }
+            Image::findOrFail($id)->update([
+                'img'=>$url,
+
+            ]);
+            $notification =array(
+                'message'=>'Image updated successfully',
                 'alert-type'=>'success',
 
             );

@@ -49,10 +49,12 @@ Route::controller(backendController::class)->group(function () {
     Route::get('/user/language','userLanguage')->name('user.language');
     Route::post('/save/language','saveLanguage')->name('save.language');
     Route::get('/edit/language','editLanguage')->name('edit.language');
-    Route::post('/update/language','updateLanguage')->name(name: 'update.language');
+    Route::post('/update/language','updateLanguage')->name('update.language');
 
     Route::get('/user/image','userImage')->name('user.image');
     Route::post('/save/image','saveImage')->name('save.image');
+    Route::get('/edit/image','editImage')->name('edit.image');
+    Route::post('/update/image','updateImage')->name('update.image');
 
 });
 
