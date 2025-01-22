@@ -266,7 +266,7 @@ class backendController extends Controller
         $languageName = $language->languageName;
         $languages = explode(',',$languageName);
 
-        return view('backend.eduLanguage', compact('languageName', 'language'));
+        return view('backend.editLanguage', compact('languageName', 'language'));
     }
 
     public function updateLanguage(Request $request)
@@ -369,5 +369,10 @@ class backendController extends Controller
             );
             return redirect()->back()->with( $notification);
         }
+    }
+
+    public function cv(Request $request){
+
+        return view('backend.cv');
     }
 }

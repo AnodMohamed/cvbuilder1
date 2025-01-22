@@ -56,6 +56,8 @@ Route::controller(backendController::class)->group(function () {
     Route::get('/edit/image','editImage')->name('edit.image');
     Route::post('/update/image','updateImage')->name('update.image');
 
+    Route::get('/cv','cv')->name('cv');
+
 });
 
 require __DIR__.'/auth.php';
