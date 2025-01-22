@@ -293,25 +293,13 @@
     <div class="wrapper">
 
         {{-- header --}}
-        @include('backend.include.header')
 
-        <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
-            <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
-                <i class="fe fe-x"><span class="sr-only"></span></i>
-            </a>
-
-            {{-- sidebar --}}
-            @include('backend.include.sidebar')
-
-        </aside>
 
         <main role="main" class="main-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <div class="d-flex justify-content-end">
-                            <a  class="btn mb-2 btn-danger mr-2" href="{{ route('downloadCv') }}">PDF</a>
-                        </div>
+                        
                         <div class="row">
                             <div class="container">
                                 <div class="left_Side">

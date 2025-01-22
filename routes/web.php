@@ -56,7 +56,8 @@ Route::controller(backendController::class)->group(function () {
     Route::get('/edit/image','editImage')->name('edit.image');
     Route::post('/update/image','updateImage')->name('update.image');
 
-    Route::get('/cv','cv')->name('cv');
+    Route::get('/cv',action: 'cv')->name('cv');
+    Route::get('/downloadCv','downloadCv')->name('downloadCv');
 
 });
 

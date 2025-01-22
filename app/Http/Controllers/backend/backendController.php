@@ -15,6 +15,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class backendController extends Controller
 {
@@ -374,5 +375,13 @@ class backendController extends Controller
     public function cv(Request $request){
 
         return view('backend.cv');
+    }
+    public function downloadCv(Request $request){
+        $pdf = Pdf::loadView('backend.getCv')->setPaper('a4')->setOption([
+            'temdir' => public_path(),
+            'chroot '=> public_path(),
+
+        ]);
+        return $pdf->download('cv.pdf');
     }
 }
