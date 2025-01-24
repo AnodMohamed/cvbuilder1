@@ -1,108 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
-   <title>diigo</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
-   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}">
-   <!-- style css -->
-   <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}">
-   <!-- Responsive-->
-   <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css')}}">
-   <!-- fevicon -->
-   <link rel="icon" href="{{ asset('frontend/images/fevicon.png')}}" type="image/gif" />
-   <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="{{ asset('frontend/css/jquery.mCustomScrollbar.min.css')}}">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-      media="screen">
-   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-</head>
-<!-- body -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Kelly Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-<body class="main-layout">
-   <!-- loader  -->
-   <div class="loader_bg">
-      <div class="loader"><img src="{{ asset('frontend/images/loading.gif')}}" alt="#" /></div>
-   </div>
-   <!-- end loader -->
+  <!-- Favicons -->
+  <link href="{{ asset('frontend/assets/img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('frontend/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{ asset('frontend/assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css')}}"rel="stylesheet">
+  <link href="{{ asset('frontend/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{{ asset('frontend/assets/css/main.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Kelly
+  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
    <!-- header -->
    @include('include.header')
-   <!-- end banner -->
-   <!-- business -->
 
-   <!-- end business -->
-   <!-- Projects -->
 
-   <!-- end projects -->
-   <!-- Testimonial -->
 
-   <!-- end Testimonial -->
-   <!-- contact -->
-   <div id="contact" class="contact">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage">
-                  <h2>Contact us</h2>
-                  <span>There are many variations of passages of Lorem Ipsum available, but the </span>
-               </div>
-            </div>
-         </div>
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>Kelly Adams</h2>
+            <p>I'm a professional illustrator from San Francisco</p>
+            <a href="about.html" class="btn-get-started">About Me</a>
+          </div>
+        </div>
       </div>
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12 ">
-               <form class="main_form ">
-                  <div class="row">
-                     <div class="col-md-12 ">
-                        <input class="form_contril" placeholder="Name " type="text" name="Name ">
-                     </div>
-                     <div class="col-md-12">
-                        <input class="form_contril" placeholder="Phone Number" type="text" name=" Phone Number">
-                     </div>
-                     <div class="col-md-12">
-                        <input class="form_contril" placeholder="Email" type="text" name="Email">
-                     </div>
-                     <div class="col-md-12">
-                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                     </div>
-                     <div class="col-sm-12">
-                        <button class="send_btn">Send</button>
-                     </div>
-                  </div>
-               </form>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- end contact -->
-   <!--  footer -->
+
+    </section><!-- /Hero Section -->
+
+  </main>
+
+
    @include('include.footer')
    <!-- end footer -->
    <!-- Javascript files-->
-   <script src="{{ asset('frontend/js/jquery.min.js')}}"></script>
-   <script src="{{ asset('frontend/js/popper.min.js')}}"></script>
-   <script src="{{ asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
-   <script src="{{ asset('frontend/js/jquery-3.0.0.min.js')}}"></script>
-   <script src="{{ asset('frontend/js/plugin.js')}}"></script>
-   <!-- sidebar -->
-   <script src="{{ asset('frontend/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-   <script src="{{ asset('frontend/js/custom.js')}}"></script>
-   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+  <script src="{{ asset('frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
+
 </body>
 
 </html>

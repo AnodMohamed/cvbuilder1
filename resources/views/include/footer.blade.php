@@ -1,32 +1,22 @@
-<footer>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 ">
-                    <div class="cont">
-                        <h3> <strong class="multi"> Free Multipurpose Responsive</strong><br>
-                            Landing Page 2019
-                        </h3>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>Copyright 2019 All Right Reserved By <a href="https://html.design/"> Free html Templates</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Kelly</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
     </div>
-</footer>
+
+  </footer>

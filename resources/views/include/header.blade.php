@@ -1,84 +1,47 @@
-<header>
-    <!-- header inner -->
-    <div class="head_top">
-        <div class="header">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                        <div class="full">
-                            <div class="center-desk">
-                                <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('frontend/images/logo.png')}}"
-                                            alt="#" /></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                        <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarsExample04">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"> Home </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">About</a>
-                                    </li>
-                                    @auth
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('usercv') }}">CV Panel</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('user.logout') }}">Logout</a>
-                                        </li>
-                                    @else
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('login') }}">Log in</a>
-                                        </li>
-                                    @endauth
+<header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end header inner -->
-        <!-- end header -->
-        <!-- banner -->
-        <section class="banner_main">
-            <div class="container-fluid">
-                <div class="row d_flex">
-                    <div class="col-md-6">
-                        <div class="text-bg">
-                            <h1>Create your Cv</h1>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of
-                                a
-                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less
-                                normal distribution of letters,</p>
-                            @auth
-                                <a href="{{ route('usercv') }}">Start Now</a>
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Kelly</h1>
+      </a>
 
-                            @else
-                                <a href="{{ route('login') }}">Login</a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-                            @endauth
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="text-img">
-                            <figure><img src="{{ asset('frontend/images/side.png')}}" alt="#" /></figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
     </div>
-</header>
+  </header>
