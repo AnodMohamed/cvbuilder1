@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Kelly Bootstrap Template</title>
+  <title>{{ $info->name }}</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -49,13 +49,13 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="{{ asset('frontend/assets/img/hero-bg.jpg')}}" alt="" data-aos="fade-in" style="opacity: 0.5;">
 
       <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2>Kelly Adams</h2>
-            <p>I'm a professional illustrator from San Francisco</p>
+            <h2>{{ $info->name }}</h2>
+            <p>I'm a web developer</p>
             <a href="about.html" class="btn-get-started">About Me</a>
           </div>
         </div>
