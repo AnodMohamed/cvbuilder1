@@ -60,7 +60,8 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/', [frontendController::class,'index']);
+Route::get('/', [frontendController::class,'index'])->name('index');
+
 
 
 require __DIR__.'/auth.php';

@@ -98,6 +98,7 @@
                       <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ $info->city }}</span></li>
                       <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{ $info->email }}</span></li>
                       <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ $info->phone }}</span></li>
+                      <li><i class="bi bi-chevron-right"></i> <strong>Language:</strong> <span>{{  $languageName }}</span></li>
 
                     </ul>
                 </div>
