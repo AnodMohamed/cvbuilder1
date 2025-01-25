@@ -56,7 +56,7 @@
           <div class="col-lg-8">
             <h2>{{ $info->name }}</h2>
             <p>I'm a web developer</p>
-            <a href="about.html" class="btn-get-started">About Me</a>
+            <a href="#about" class="btn-get-started">About Me</a>
           </div>
         </div>
       </div>
@@ -115,8 +115,10 @@
 
       </section><!-- /About Section -->
 
+
       <!-- Skills Section -->
-      <section id="skills" class="skills section">
+      <section id="program" class="skills section">
+
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -180,6 +182,30 @@
 
           </div>
 
+        </div>
+
+      </section><!-- /Skills Section -->
+
+       <!-- /Skills Section -->
+       <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Skills</h2>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4">
+            @foreach ($skills as $skill)
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item item-cyan position-relative">
+                    <a href="#" class="stretched-link">
+                    <h3>{{ $skill }}</h3>
+                    </a>
+                </div>
+                </div><!-- End Service Item -->
+            @endforeach
+          </div>
         </div>
 
       </section><!-- /Skills Section -->

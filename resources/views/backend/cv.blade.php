@@ -400,7 +400,7 @@
                                         @endphp
                                         <p>{{ $profile->des }}</p>
                                     </div>
-                                    <div class="about">
+                                    {{-- <div class="about">
                                         @php
                                             $experiences =  App\Models\Education::where('user_id', Auth::user()->id)->where('level_id',4)->get();
 
@@ -420,21 +420,21 @@
 
                                             @endforeach
 
-                                    </div>
+                                    </div> --}}
                                     <div class="about skills">
-                                        <h2 class="title2">Professional Skills</h2>
+                                        <h2 class="title2"> Skills</h2>
                                         @php
                                             $skill = App\Models\Skill::where('user_id', Auth::user()->id)->first();
                                             $skillName = $skill->skillName;
                                             $skills =explode(',', $skillName);
 
                                         @endphp
-                                        @foreach ($skills as $skill)
-                                            <div class="box">
-                                                <h4>{{ $skill }}</h4>
-                                                <div class="percent">
+                                       @foreach ($skills as $index => $skill)
+                                            <div>
+                                                <h5>{{ $loop->iteration }}. {{ $skill }}</h5>
+                                                {{-- <div class="percent">
                                                     <div style="width:95%;"></div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         @endforeach
 

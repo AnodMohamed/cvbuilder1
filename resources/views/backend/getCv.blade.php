@@ -299,7 +299,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        
+
                         <div class="row">
                             <div class="container">
                                 <div class="left_Side">
@@ -388,7 +388,7 @@
                                         @endphp
                                         <p>{{ $profile->des }}</p>
                                     </div>
-                                    <div class="about">
+                                    {{-- <div class="about">
                                         @php
                                             $experiences =  App\Models\Education::where('user_id', Auth::user()->id)->where('level_id',4)->get();
 
@@ -408,7 +408,7 @@
 
                                             @endforeach
 
-                                    </div>
+                                    </div> --}}
                                     <div class="about skills">
                                         <h2 class="title2">Professional Skills</h2>
                                         @php
@@ -419,10 +419,10 @@
                                         @endphp
                                         @foreach ($skills as $skill)
                                             <div class="box">
-                                                <h4>{{ $skill }}</h4>
-                                                <div class="percent">
+                                                <h5>{{ $skill }}</h5>
+                                                {{-- <div class="percent">
                                                     <div style="width:95%;"></div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         @endforeach
 

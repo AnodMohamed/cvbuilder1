@@ -5,10 +5,10 @@
         <p>© <span>Copyright</span> <strong class="px-1 sitename">{{ $info->name }}</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a  href="https://www.youtube.com/@anodmohamed24"><i class="bi bi-youtube"></i></a>
+        <a href="https://www.instagram.com/eng_anod_mohamed/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anod-mohamed-a04b1b1b2/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/AnodMohamed" class="github"><i class="bi bi-github"></i></i></a>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
