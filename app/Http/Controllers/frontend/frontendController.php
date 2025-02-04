@@ -7,6 +7,7 @@ use App\Models\Education;
 use App\Models\Info;
 use App\Models\Language;
 use App\Models\Profile;
+use App\Models\ProSkill;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 
@@ -18,14 +19,17 @@ class frontendController extends Controller
         $profile = Profile::where('user_id',2)->first();
         $edu = Education::where('user_id',2)->first();
 
-        $language = Language::where('user_id', 2)->first();
+        $language = Language::where( 'user_id', 2)->first();
         $languageName = $language->languageName;
 
         $skill = Skill::where('user_id', 2)->first();
         $skillName = $skill->skillName;
         $skills = explode(',',$skillName);
 
-        return view('index', compact('info','profile','edu','languageName','skills'));
+        $proskills = ProSkill::get();
+
+
+        return view('index', compact('info','profile','edu','languageName','skills','proskills'));
 
     }
 }

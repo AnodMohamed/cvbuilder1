@@ -48,6 +48,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/language','editLanguage')->name('edit.language');
         Route::post('/update/language','updateLanguage')->name('update.language');
 
+        route::get('/user/proSkill','userProSkill')->name('user.proSkill');
+        Route::post('/save/proSkill','saveProSkill')->name('save.proSkill');
+        Route::get('/edit/proSkill','editProSkill')->name('edit.proSkill');
+        Route::get('/edit/proSkill/row/{id}', 'editProSkillRow')->name('edit.proSkill.row');
+        Route::post('/update/proSkill','updateProSkill')->name('update.proSkill');
+        Route::get('/delete/proSkill/row/{id}','deleteProskillRow')->name('delete.proSkill.row');
+
         Route::get('/user/image','userImage')->name('user.image');
         Route::post('/save/image','saveImage')->name('save.image');
         Route::get('/edit/image','editImage')->name('edit.image');

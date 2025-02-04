@@ -440,13 +440,34 @@
 
 
                                     </div>
+
+                                    <div class="about skills">
+                                        <h2 class="title2">Technical  Skills</h2>
+                                        @php
+                                            $proSkills = App\Models\ProSkill::get();
+
+
+                                        @endphp
+                                        @foreach ($proSkills as $key => $proSkill)
+                                            <div class="box">
+                                                    <h6>{{ $key + 1 }}. {{ $proSkill->skill }}</h6>
+                                                    <div class="percent">
+                                                        <div style="width:{{ $proSkill->skill_level }}%;"></div>
+                                                    </div>
+                                            </div>
+                                        @endforeach
+
+
+                                    </div>
                                     <div class="About interest">
-                                        <h2 class="title2">Interest</h2>
-                                        <ul>
-                                            <li><i class="fa fa-bar-chart" aria-hidden="true"></i>Trading</li>
-                                            <li><i class="fa fa-laptop" aria-hidden="true"></i>Developing</li>
-                                            <li><i class="fa fa-gamepad" aria-hidden="true"></i>Gaming</li>
-                                            <li><i class="fa fa-briefcase" aria-hidden="true"></i>Business</li>
+                                        <h2 class="title2">Social media</h2>
+
+                                        <ul class="d-flex row">
+                                            <li class="col-6">Youtube:<i > @anodmohamed24 </i></li>
+                                            <li class="col-6">Instagram:<i > eng_anod_mohamed </i></li>
+                                            <li class="col-6">Iinkedin:<i > Anod Mohamed </i></li>
+                                            <li class="col-6">Github:<i > AnodMohamed </i></li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -766,6 +787,12 @@
 
         }
     </style>
+
+
+
+
+    </script>
+
 
 </body>
 

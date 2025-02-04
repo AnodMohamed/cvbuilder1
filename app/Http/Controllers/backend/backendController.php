@@ -10,6 +10,7 @@ use App\Models\Info;
 use App\Models\Language;
 use App\Models\Level;
 use App\Models\Profile;
+use App\Models\ProSkill;
 use App\Models\Skill;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
@@ -370,6 +371,58 @@ class backendController extends Controller
             );
             return redirect()->back()->with( $notification);
         }
+    }
+
+
+    public function userProSkill(){
+        return view('backend.proSkill');
+
+    }
+
+    public function saveProSkill(Request $request)
+    {
+        ProSkill::insert([
+            'skill'=>$request->skill,
+            'skill_level'=>$request->skill_level,
+
+        ]);
+        $notification =array(
+            'message'=>' skill inserted successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
+
+    public function editProSkill(Request $request){
+        $proSkills = ProSkill::get();
+        return view('backend.editProSkill', compact('proSkills'));
+
+    }
+
+    public function editProSkillRow($id){
+
+        $proSkill = ProSkill::where('id', $id)->first();
+        return view('backend.proSkillRow', compact('proSkill'));
+
+
+    }
+
+    public function updateProSkill(Request $request)
+    {
+        ProSkill::findOrFail($request->id)->update([
+            'skill'=>$request->skill,
+            'skill_level'=>$request->skill_level,
+
+        ]);
+        $notification =array(
+            'message'=>' Technical Skill updated successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->route("edit.proSkill")->with( $notification);
     }
 
     public function cv(Request $request){
