@@ -63,6 +63,10 @@
                     <a class="nav-link pl-3" href="{{ route('user.proSkill') }}"><span class="ml-1 item-text">Technical Skills</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="{{ route('user.portfolio') }}"><span class="ml-1 item-text">Portfolio</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item dropdown">
@@ -97,6 +101,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link pl-3" href="{{ route('edit.proSkill') }}"><span class="ml-1 item-text">Technical Skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="{{ route('edit.portfolio') }}"><span class="ml-1 item-text">Portfolio</span>
                     </a>
                 </li>
             </ul>

@@ -60,6 +60,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/image','editImage')->name('edit.image');
         Route::post('/update/image','updateImage')->name('update.image');
 
+        Route::get('/user/portfolio','userPortfolio')->name('user.portfolio');
+        Route::post('/save/portfolio','savePortfolio')->name('save.portfolio');
+        Route::get('/edit/portfolio','editPortfolio')->name('edit.portfolio');
+        Route::get('/edit/portfolio/row/{id}','editPortfolioRow')->name('edit.portfolio.row');
+        Route::post('/update/portfolio','updatePortfolio')->name(name: 'update.portfolio');
+        Route::get('/delete/portfolio/row/{id}','deletePortfolioRow')->name('delete.portfolio.row');
+
         Route::get('/cv',action: 'cv')->name('cv');
         Route::get('/downloadCv','downloadCv')->name('downloadCv');
 

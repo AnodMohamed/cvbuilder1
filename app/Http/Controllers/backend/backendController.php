@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Info;
 use App\Models\Language;
 use App\Models\Level;
+use App\Models\Portfolio;
 use App\Models\Profile;
 use App\Models\ProSkill;
 use App\Models\Skill;
@@ -428,6 +429,71 @@ class backendController extends Controller
     public function cv(Request $request){
 
         return view('backend.cv');
+    }
+    public function userPortfolio(Request $request)
+    {
+        return view('backend.portfolio');
+
+    }
+
+    public function savePortfolio(Request $request)
+    {
+
+        Portfolio::insert([
+            'title'=>$request->title,
+            'des'=>$request->des,
+            'youtube'=>$request->youtube,
+            'github'=>$request->github,
+
+        ]);
+        $notification =array(
+            'message'=>' Data inserted successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
+
+    public function editPortfolio(Request $request){
+        $Portfolios = Portfolio::get();
+        return view('backend.editPortfolio', compact('Portfolios'));
+
+    }
+
+    public function editPortfolioRow($id){
+
+        $Portfolio = Portfolio::where('id', $id)->first();
+        return view('backend.editPortfolioRow', compact('Portfolio'));
+
+
+    }
+    public function updatePortfolio(Request $request)
+    {
+        Portfolio::findOrFail($request->id)->update([
+            'title'=>$request->title,
+            'des'=>$request->des,
+            'youtube'=>$request->youtube,
+            'github'=>$request->github,
+        ]);
+        $notification =array(
+            'message'=>' Data updated successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
+    }
+    public function deletePortfolioRow($id){
+
+        Portfolio::findOrFail($id)->delete();
+        $notification =array(
+            'message'=>'Data deleted successfully',
+            'alert-type'=>'success',
+
+        );
+
+        return redirect()->back()->with( $notification);
     }
     public function downloadCv(Request $request){
         $pdf = Pdf::loadView('backend.getCv')->setPaper('a4')->setOption([
